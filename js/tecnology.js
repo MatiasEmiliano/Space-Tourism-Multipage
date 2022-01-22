@@ -27,17 +27,17 @@ function ejecutarTecno() {
                 case '1':
                     i = 0
                     page = 'capsule'
-                    source = '../starter-code/assets/technology/image-space-capsule-'
+                    source = 'assets/technology/image-space-capsule-'
                     break
                 case '2':
                     i = 1
                     page = 'spaceport'
-                    source = '../starter-code/assets/technology/image-spaceport-'
+                    source = 'assets/technology/image-spaceport-'
                     break
                 case '3':
                     i = 2
                     page = 'vehicle'
-                    source = '../starter-code/assets/technology/image-launch-vehicle-'
+                    source = 'assets/technology/image-launch-vehicle-'
                     break
             }
             for (let j = 0; j < barrItems.length; j++) {
