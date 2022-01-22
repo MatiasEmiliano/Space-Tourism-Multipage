@@ -1,0 +1,307 @@
+$color1:#0b0d17;
+$color2:#d0d6f9;
+$color3:#FFFFFF;
+$color4:hsla(0, 100%, 100%, 0.5);
+$header-height:80px;
+$sub-nav-height:30px;
+$font1:'Bellefair';
+$font2: 'Barlow Condensed';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100vh;
+}
+
+body{
+    height: 100vh;
+    background-image: url('../assets/technology/background-technology-desktop.jpg');
+}
+.header{
+    position:relative;
+    height:$header-height;
+    top:3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo{
+        display: block;
+        position: relative;
+        left: 50px;
+    }
+    &__line{
+        border: 2px solid hsla(0, 100%, 100%, 0.1);
+        position: relative;
+        left: 50px;;
+        width:calc(40% - 48px);
+        z-index: +2;
+    }
+    &__hamburguer{
+            position: absolute;
+            right: 30px;
+            top:5px;
+            display: none;
+    }
+    &__nav{
+        width: 60%;
+        height: inherit;
+    }
+}
+.nav-menu{
+    font-family: $font2;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    height:inherit;
+    background-color:hsla(0, 100%, 100%, 0.05);
+    backdrop-filter: blur(2rem);
+    &__ul{
+        list-style: none;
+        height: inherit;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    &__item{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        border-bottom: 3px solid transparent;
+        background-color: transparent;
+        height:inherit;
+        &--active{
+            border-bottom: 3px solid $color3
+        }
+        &:hover{
+            border-bottom: 3px solid $color4;
+            transition: all 100ms ease-in-out;
+        }
+    }
+    &__span{
+        color:$color3;
+        font-weight: 500;
+        margin-right:1rem;
+    }
+    &__link{
+        text-decoration: none;
+        color: $color2;
+        &:active{
+            color:$color4;
+        }
+        &:hover{
+            color: $color3;
+        }
+    }
+    &--sub-nav{
+        background-color: transparent;
+        backdrop-filter: none;
+    }
+}
+.main{
+    font-family: $font2;
+    color: $color2;
+    height: calc(100% - #{$header-height});
+    //border: 1px solid red;
+    &__title{
+        font-weight: 400;
+        font-size: 1.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem; 
+        padding:4rem 3rem ; 
+    }
+    &__ctn{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        //border: 1px solid blue;
+        padding-left: 3rem;
+        &-selector{
+            height: 70%;
+        }
+        &-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 5rem;
+            &-subname{
+                text-transform: uppercase;
+                width: 70%;
+                font-size:1.75rem;
+                line-height: 2rem;
+                font-weight: 400;
+                font-family: $font2;
+            }
+            &-name{
+                font-family: $font1;
+                font-weight: 400;
+                font-size: 4rem;
+                color: $color3;
+                text-transform: uppercase;
+                margin: 1rem 0;
+            }
+            &-desc{
+                width: 80%;
+                font-size:1.2rem;
+                line-height: 2rem;
+                font-weight: 300;
+                font-family: $font2;
+            }
+        }
+    }
+    &__img-mobile{
+        display: none;
+    }
+    &__ctn2{
+        display: flex;
+    }
+    &__img{
+        width: 500px;
+    }
+}
+
+.barr1{
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__ctn{
+        height: 100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__circle{
+        font-family: $font1;
+        font-weight: 400;
+        font-size: 2rem;
+        color: white;
+        border: 1px solid $color4;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 1rem;
+        &--active{
+            background-color: $color3;
+            color: $color1;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+@media only screen and(max-width:1063px){//tablets
+    html{
+        font-size: 14px;
+    }
+    body{
+        background-image: url('../assets/technology/background-technology-tablet.jpg');
+        background-size:cover;
+    }
+    .nav-menu{
+        display: block;
+        &__span{
+            display: none;
+        }
+    }
+    .main{
+        &__ctn{
+           padding: 0;
+           flex-wrap: wrap;
+           justify-content: center; 
+        }
+        &__ctn-img{
+            display: none;
+        }
+        &__ctn-selector{
+            height: 30%;
+        }
+        &__img-mobile{
+            display: block;
+            width: 100%;
+        }
+        &__ctn-card{
+            margin: 0 auto;
+            width: 80%;
+            &-name{
+                text-align: center;
+            }
+            &-subname{
+                text-align: center;
+                width:100%;
+            }
+            &-desc{
+                width: 100%;
+                text-align: center;
+            }
+        }
+        &__img{
+            display: none;
+        }
+    }
+
+    .barr1{
+        &__ctn{
+            flex-direction: row;
+            margin: 3rem 0;
+        }
+    }
+}
+
+@media only screen and(max-width:520px){//mobile
+    html{
+        font-size: 10px;
+    }
+    .header{
+        display: block;
+    }
+    .header__logo{
+        left: 20px;
+        top: -10px;
+    }
+    .header__nav{
+        width: 100%;
+        height:auto;
+    }
+
+    body{
+        background-image: url('../assets/technology/background-technology-mobile.jpg');
+    }
+    .nav-menu{
+        display: none;
+        &__ul{
+            flex-direction: column;
+        }
+        &__item{
+            padding: 2rem 0;
+            display: block;
+            text-align: center;
+            font-size: 3rem;
+            &--active{
+                border-bottom: 3px solid transparent;
+            }
+        }
+        &__span{
+            display: none;
+        }
+        &--display{
+            display:block;
+        }
+        &--sub-nav{
+            display: block;
+        }
+    }
+    .header__line{
+        display: none;
+    }
+    .header__hamburguer{
+        display:block;
+    }
+}
